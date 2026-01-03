@@ -505,6 +505,7 @@ img {
   height: auto;
   min-height: auto;
   display: block;
+  overflow-x: auto;
 }
 
 .sketches-container {
@@ -948,15 +949,6 @@ img {
   .section-sketches {
     padding: 100px 20px 60px 20px;
   }
-  
-  .sketches-container {
-    gap: 80px;
-    max-width: 320px;
-  }
-  
-  .sketch-images img {
-    max-height: 180px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1005,20 +997,5 @@ img {
   .title-row {
     gap: 40px;
     flex-direction: column;
-  }
-  
-  .sketches-container {
-    gap: 60px;
-    max-width: 280px;
-  }
-  
-  .sketch-images img {
-    max-height: 140px;
-    box-shadow: 
-      -20px 28px 12px 0px rgba(111, 88, 47, 0),
-      -13px 18px 10px 0px rgba(111, 88, 47, 0.01),
-      -7px 10px 8px 0px rgba(111, 88, 47, 0.05),
-      -3px 4px 6px 0px rgba(111, 88, 47, 0.09),
-      -1px 1px 3px 0px rgba(111, 88, 47, 0.1);
   }
 }
