@@ -972,10 +972,6 @@ img {
     transform: translateX(-50%);
   }
   
-  .section-content {
-    transform: scale(0.8);
-  }
-  
   .section-sketches {
     padding: 100px 20px 60px 20px;
   }
@@ -1007,10 +1003,6 @@ img {
   .brace {
     width: 12px;
     height: 95px;
-  }
-  
-  .section-content {
-    transform: scale(0.6);
   }
   
   .paper-scatter-1,
