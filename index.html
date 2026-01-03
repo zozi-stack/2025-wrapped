@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Op. 2025 — The Year of the Snake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=David+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'TRJN DaVinci';
+      src: url('fonts/TRJNDaVinci-Medium.woff2') format('woff2'),
+           url('fonts/TRJNDaVinci-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TRJN DaVinci';
+      src: url('fonts/TRJNDaVinci-MediumItalic.woff2') format('woff2'),
+           url('fonts/TRJNDaVinci-MediumItalic.woff') format('woff');
+      font-weight: 500;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'TRJN DaVinci';
+      src: url('fonts/TRJNDaVinci-Italic.woff2') format('woff2'),
+           url('fonts/TRJNDaVinci-Italic.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Zoom Modal -->
+  <div class="zoom-modal" id="zoom-modal">
+    <button class="zoom-close" id="zoom-close">×</button>
+    <img src="" alt="" class="zoom-image" id="zoom-image">
+  </div>
+
+  <!-- Fixed Shadow Overlay -->
+  <div class="shadow-overlay">
+    <img src="https://www.figma.com/api/mcp/asset/768f33d1-f399-4be3-b3b8-18d9113f864e" alt="" class="shadow-img">
+  </div>
+
+  <!-- Fixed Navigation -->
+  <nav class="toc">
+    <h3 class="toc-title">Contents</h3>
+    <ul class="toc-list">
+      <li class="toc-item" data-section="sketches">No. 1. Sketches</li>
+      <li class="toc-item" data-section="dates">No. 2. Dates</li>
+      <li class="toc-item" data-section="books">No. 3. Books</li>
+      <li class="toc-item" data-section="piano">No. 4. Piano</li>
+      <li class="toc-item" data-section="questions">No. 5. Questions</li>
+      <li class="toc-item" data-section="lessons">No. 6. Lessons</li>
+      <li class="toc-item" data-section="2026">No. 7. 2026</li>
+    </ul>
+  </nav>
+
+  <!-- Scrolling Content (reversed order - scroll UP to progress) -->
+  <main class="scroll-container">
+    
+    <!-- Section 7: 2026 -->
+    <section class="section section-2026" id="2026">
+      <div class="section-content">
+        <!-- 2026 Symbol -->
+        <div class="symbol-2026">
+          <img src="images/2026 Symbol.png" alt="2026 Symbol">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Lessons -->
+    <section class="section" id="lessons">
+      <div class="section-content">
+        <div class="paper paper-lessons fade-element">
+          <img src="images/Lessons.png" alt="Lessons" class="zoomable">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Questions -->
+    <section class="section" id="questions">
+      <div class="section-content">
+        <div class="paper paper-questions">
+          <img src="images/Questions.png" alt="Questions" class="zoomable">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Piano (horizontal gallery) -->
+    <section class="section section-piano" id="piano">
+      <div class="piano-gallery">
+        <div class="piano-track">
+          <div class="piano-slide">
+            <img src="images/Piano_MoonlightSonata.png" alt="Moonlight Sonata" class="zoomable">
+          </div>
+          <div class="piano-slide">
+            <img src="images/Piano_GlassEtudeNo.1.png" alt="Glass Etude No. 1" class="zoomable">
+          </div>
+          <div class="piano-slide">
+            <img src="images/Piano_Fly.png" alt="Fly by Einaudi" class="zoomable">
+          </div>
+          <div class="piano-slide">
+            <img src="images/Piano_GlassEtudeNo.6.png" alt="Glass Etude No. 6" class="zoomable">
+          </div>
+        </div>
+        <div class="gallery-hint">← drag to scroll →</div>
+      </div>
+    </section>
+
+    <!-- Section 3: Books -->
+    <section class="section" id="books">
+      <div class="section-content">
+        <div class="paper paper-books">
+          <img src="images/Books.png?v=2" alt="Books" class="zoomable">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Dates -->
+    <section class="section" id="dates">
+      <div class="section-content">
+        <div class="paper paper-dates">
+          <img src="images/Dates.png" alt="Best Dates" class="zoomable">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Sketches (9 months, reversed for scroll-up) -->
+    <section class="section section-sketches" id="sketches">
+      <div class="sketches-container">
+        <div class="sketch-row">
+          <span class="month-label">December</span>
+          <div class="sketch-images">
+            <img src="images/sketches/15.1.png" alt="Sketch 15.1" class="zoomable">
+            <img src="images/sketches/15.2.png" alt="Sketch 15.2" class="zoomable">
+            <img src="images/sketches/16.1.png" alt="Sketch 16.1" class="zoomable">
+            <img src="images/sketches/16.2.png" alt="Sketch 16.2" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">October</span>
+          <div class="sketch-images">
+            <img src="images/sketches/10.1.png" alt="Sketch 10.1" class="zoomable">
+            <img src="images/sketches/10.2.png" alt="Sketch 10.2" class="zoomable">
+            <img src="images/sketches/11.1.png" alt="Sketch 11.1" class="zoomable">
+            <img src="images/sketches/12.1.png" alt="Sketch 12.1" class="zoomable">
+            <img src="images/sketches/12.2.png" alt="Sketch 12.2" class="zoomable">
+            <img src="images/sketches/12.3.png" alt="Sketch 12.3" class="zoomable">
+            <img src="images/sketches/13.1.png" alt="Sketch 13.1" class="zoomable">
+            <img src="images/sketches/13.2.png" alt="Sketch 13.2" class="zoomable">
+            <img src="images/sketches/14.1.png" alt="Sketch 14.1" class="zoomable">
+            <img src="images/sketches/14.2.png" alt="Sketch 14.2" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">September</span>
+          <div class="sketch-images">
+            <img src="images/sketches/9.1.png" alt="Sketch 9.1" class="zoomable">
+            <img src="images/sketches/9.2.png" alt="Sketch 9.2" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">August</span>
+          <div class="sketch-images">
+            <img src="images/sketches/7.1.png" alt="Sketch 7.1" class="zoomable">
+            <img src="images/sketches/7.2.png" alt="Sketch 7.2" class="zoomable">
+            <img src="images/sketches/8.1.png" alt="Sketch 8.1" class="zoomable">
+            <img src="images/sketches/8.2.png" alt="Sketch 8.2" class="zoomable">
+            <img src="images/sketches/8.3.png" alt="Sketch 8.3" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">June</span>
+          <div class="sketch-images">
+            <img src="images/sketches/5.1.png" alt="Sketch 5.1" class="zoomable">
+            <img src="images/sketches/6.1.png" alt="Sketch 6.1" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">May</span>
+          <div class="sketch-images">
+            <img src="images/sketches/4.1.png" alt="Sketch 4.1" class="zoomable">
+            <img src="images/sketches/4.2.png" alt="Sketch 4.2" class="zoomable">
+            <img src="images/sketches/4.3.png" alt="Sketch 4.3" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">April</span>
+          <div class="sketch-images">
+            <img src="images/sketches/3.1.png" alt="Sketch 3.1" class="zoomable">
+            <img src="images/sketches/3.2.png" alt="Sketch 3.2" class="zoomable">
+            <img src="images/sketches/3.3.png" alt="Sketch 3.3" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">March</span>
+          <div class="sketch-images">
+            <img src="images/sketches/2.1.png" alt="Sketch 2.1" class="zoomable">
+            <img src="images/sketches/2.2.png" alt="Sketch 2.2" class="zoomable">
+            <img src="images/sketches/2.3.png" alt="Sketch 2.3" class="zoomable">
+            <img src="images/sketches/2.4.png" alt="Sketch 2.4" class="zoomable">
+          </div>
+        </div>
+        <div class="sketch-row">
+          <span class="month-label">Pre January</span>
+          <div class="sketch-images">
+            <img src="images/sketches/1.1.png" alt="Sketch 1.1" class="zoomable">
+            <img src="images/sketches/1.2.png" alt="Sketch 1.2" class="zoomable">
+            <img src="images/sketches/1.3.png" alt="Sketch 1.3" class="zoomable">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Play Section -->
+    <section class="section section-play" id="play">
+      <div class="section-content play-content">
+        <div class="spotify-player">
+          <iframe 
+            style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/1A7bjwDHQB0jQH4cp8Wncj?utm_source=generator&theme=0" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Title Section (starting point - at bottom) -->
+    <section class="section section-title" id="title">
+      <img src="images/snake-texture.png" alt="" class="snake-texture">
+      <div class="title-content">
+        <div class="title-caption">
+          <h1 class="title-main">My <span class="year-italic">2025</span> Wrapped</h1>
+          <div class="title-row">
+            <span class="opus">The year of the snake</span>
+            <span class="author">Zoe 郑</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint">↑ scroll up to begin</div>
+    </section>
+
+  </main>
+
+  <script>
+    // Title letter animation (inspired by Artisans de Genève)
+    function animateTitleLetters() {
+      const titleMain = document.querySelector('.title-main');
+      if (!titleMain) return;
+      
+      // Get the original HTML (to preserve the italic span)
+      const originalHTML = titleMain.innerHTML;
+      
+      // Process text nodes and wrap letters
+      function wrapLetters(element) {
+        let letterIndex = 0;
+        
+        Array.from(element.childNodes).forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent;
+            const fragment = document.createDocumentFragment();
+            
+            // Split by words first
+            const words = text.split(/(\s+)/);
+            words.forEach(word => {
+              if (word.match(/^\s+$/)) {
+                // Preserve whitespace
+                fragment.appendChild(document.createTextNode(word));
+              } else if (word.length > 0) {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'word';
+                
+                // Wrap each letter
+                word.split('').forEach(char => {
+                  const letterSpan = document.createElement('span');
+                  letterSpan.className = 'letter';
+                  letterSpan.textContent = char;
+                  letterSpan.style.transitionDelay = `${letterIndex * 0.04}s`;
+                  wordSpan.appendChild(letterSpan);
+                  letterIndex++;
+                });
+                
+                fragment.appendChild(wordSpan);
+              }
+            });
+            
+            node.replaceWith(fragment);
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            // For elements like <span class="year-italic">, process their content
+            const innerText = node.textContent;
+            node.innerHTML = '';
+            
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'word';
+            
+            innerText.split('').forEach(char => {
+              const letterSpan = document.createElement('span');
+              letterSpan.className = 'letter';
+              letterSpan.textContent = char;
+              letterSpan.style.transitionDelay = `${letterIndex * 0.04}s`;
+              wordSpan.appendChild(letterSpan);
+              letterIndex++;
+            });
+            
+            node.appendChild(wordSpan);
+          }
+        });
+      }
+      
+      wrapLetters(titleMain);
+      
+      // Trigger animation after a brief delay
+      setTimeout(() => {
+        titleMain.classList.add('animate');
+        // Also animate the title-content for subtitles
+        const titleContent = document.querySelector('.title-content');
+        if (titleContent) {
+          titleContent.classList.add('animate');
+        }
+        // Also animate the section-title for scroll-hint
+        const sectionTitle = document.querySelector('.section-title');
+        if (sectionTitle) {
+          sectionTitle.classList.add('animate');
+        }
+      }, 200);
+    }
+    
+    // Scroll to bottom on load (start at title)
+    window.addEventListener('load', () => {
+      // Small delay to ensure full render
+      setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+        // Trigger title animation after scroll
+        setTimeout(animateTitleLetters, 100);
+      }, 50);
+    });
+
+    // TOC navigation
+    const tocItems = document.querySelectorAll('.toc-item');
+    const sections = document.querySelectorAll('.section:not(.section-title)');
+    
+    // Click navigation
+    tocItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const sectionId = item.dataset.section;
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Scroll detection - update active TOC item
+    function updateActiveSection() {
+      const windowHeight = window.innerHeight;
+      let currentSection = null;
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        
+        // Check if this section is in view
+        if (rect.top < windowHeight * 0.6 && rect.bottom > windowHeight * 0.4) {
+          currentSection = section;
+        }
+      });
+      
+      if (currentSection) {
+        const sectionId = currentSection.id;
+        tocItems.forEach(item => {
+          if (item.dataset.section === sectionId) {
+            if (!item.classList.contains('active')) {
+              tocItems.forEach(i => i.classList.remove('active'));
+              item.classList.add('active');
+            }
+          }
+        });
+      } else {
+        // If no section is active (at title), remove all active
+        const titleSection = document.getElementById('title');
+        const titleRect = titleSection.getBoundingClientRect();
+        if (titleRect.top < windowHeight * 0.6 && titleRect.bottom > windowHeight * 0.4) {
+          tocItems.forEach(i => i.classList.remove('active'));
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', updateActiveSection);
+    setTimeout(updateActiveSection, 200);
+
+    // Show TOC when title section is in view (fade in on page load)
+    const toc = document.querySelector('.toc');
+    const titleSection = document.getElementById('title');
+    
+    function updateTocVisibility() {
+      if (titleSection) {
+        const titleRect = titleSection.getBoundingClientRect();
+        // Show TOC when title section is in view
+        if (titleRect.top < window.innerHeight && titleRect.bottom > 0) {
+          toc.classList.add('visible');
+        }
+      }
+    }
+    
+    // Fade in TOC after title animation completes (1.5s delay)
+    setTimeout(() => {
+      toc.classList.add('visible');
+    }, 1500);
+
+    // Zoom modal functionality
+    const zoomModal = document.getElementById('zoom-modal');
+    const zoomImage = document.getElementById('zoom-image');
+    const zoomClose = document.getElementById('zoom-close');
+    const zoomables = document.querySelectorAll('.zoomable');
+
+    zoomables.forEach(img => {
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        zoomImage.src = img.src;
+        zoomImage.alt = img.alt;
+        zoomModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    zoomClose.addEventListener('click', () => {
+      zoomModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    zoomModal.addEventListener('click', (e) => {
+      if (e.target === zoomModal) {
+        zoomModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && zoomModal.classList.contains('active')) {
+        zoomModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.paper, .piano-slide, .sketch-row, .symbol-2026');
+    
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+
+    // Horizontal scroll galleries
+    function setupGalleryScroll(track) {
+      if (!track) return;
+      
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      track.addEventListener('mousedown', (e) => {
+        isDown = true;
+        track.classList.add('grabbing');
+        startX = e.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+      });
+
+      track.addEventListener('mouseleave', () => {
+        isDown = false;
+        track.classList.remove('grabbing');
+      });
+
+      track.addEventListener('mouseup', () => {
+        isDown = false;
+        track.classList.remove('grabbing');
+      });
+
+      track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 2;
+        track.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    setupGalleryScroll(document.querySelector('.piano-track'));
+
+    // Convert vertical scroll to horizontal scroll for piano gallery
+    function setupWheelScroll(track) {
+      if (!track) return;
+      
+      const maxScrollLeft = track.scrollWidth - track.clientWidth;
+      const screenHeight = window.innerHeight;
+      
+      track.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const scrollRatio = maxScrollLeft / screenHeight;
+        track.scrollLeft -= e.deltaY * scrollRatio;
+      }, { passive: false });
+    }
+
+    setupWheelScroll(document.querySelector('.piano-track'));
+  </script>
+</body>
+</html>
