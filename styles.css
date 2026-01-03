@@ -433,35 +433,50 @@ img {
 .paper-lessons {
   width: 1125px;
   max-width: 90vw;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(0.5deg);
+  transform: rotate(-3.7deg);
+  position: relative;
 }
 
-/* Reflective Writing Section */
+/* Lessons Section with Reflective Writing */
+.section-lessons {
+  min-height: 130vh !important;
+}
+
+.lessons-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Reflective Writing slip above Lessons */
 .paper-reflective {
-  max-height: 35vh;
-  width: 1000px;
-  max-width: 60vw;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 300px;
+  max-width: 50vw;
   display: block;
   cursor: pointer;
   transition: transform 0.3s ease;
+  transform: rotate(5deg);
+  position: relative;
+}
+
+.paper-reflective img {
+  width: 100%;
+  height: auto;
+  box-shadow: -8px 4px 20px 0px rgba(99, 90, 69, 0.1);
 }
 
 .paper-reflective:hover {
-  transform: translate(-50%, -50%) scale(1.02);
-}
-
-#reflective {
-  min-height: auto !important;
+  transform: rotate(5deg) scale(1.02);
 }
 
 /* 2026 Section - Fire Horse */
 .section-2026 {
-  min-height: 80vh !important;
+  min-height: 50vh !important;
 }
 
 .section-2026 .section-content {
