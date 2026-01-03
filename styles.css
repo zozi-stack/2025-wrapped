@@ -540,7 +540,7 @@ img {
 
 /* Piano Section - Overlapping sheet music */
 .section-piano {
-  min-height: 140vh;
+  min-height: 120vh;
   padding: 80px 20px;
   overflow: visible !important;
 }
@@ -548,8 +548,8 @@ img {
 .piano-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  height: 700px;
+  max-width: 380px;
+  height: 750px;
   margin: 0 auto;
 }
 
@@ -557,56 +557,45 @@ img {
   position: absolute;
   cursor: zoom-in;
   transition: transform 0.3s ease;
-  box-shadow: 
-    -14px 69px 20px 0px rgba(167, 143, 57, 0),
-    -9px 44px 18px 0px rgba(167, 143, 57, 0.01),
-    -5px 25px 15px 0px rgba(167, 143, 57, 0.05),
-    -2px 11px 11px 0px rgba(167, 143, 57, 0.09),
-    -1px 3px 6px 0px rgba(167, 143, 57, 0.1);
 }
 
 .piano-container img:hover {
-  transform: scale(1.02);
   z-index: 10;
 }
 
-/* GlassEtudeNo.1 - top left, rotated left */
+/* GlassEtudeNo.1 - top left, rotated */
 .piano-1 {
-  width: 254px;
-  height: 337px;
-  left: -20%;
+  width: 200px;
+  left: 0;
   top: 0;
-  transform: rotate(-11deg);
+  transform: rotate(-8deg);
   z-index: 1;
 }
 
-/* Sonata - top right, slight rotation */
+/* Sonata - top right, overlapping Glass Etude */
 .piano-2 {
-  width: 278px;
-  height: 335px;
-  right: 5%;
-  top: 50px;
-  transform: rotate(-3deg);
+  width: 180px;
+  right: 20px;
+  top: 30px;
+  transform: rotate(2deg);
   z-index: 2;
 }
 
-/* GlassEtudeNo.6 - bottom left */
+/* GlassEtudeNo.6 - bottom left, rotated */
 .piano-3 {
-  width: 303px;
-  height: 401px;
-  left: -5%;
-  top: 280px;
-  transform: rotate(-10deg);
+  width: 220px;
+  left: 0;
+  top: 320px;
+  transform: rotate(-6deg);
   z-index: 3;
 }
 
-/* Fly - bottom right */
+/* Fly - bottom right, overlapping Glass Etude No.6 */
 .piano-4 {
-  width: 291px;
-  height: 401px;
-  right: -5%;
-  top: 340px;
-  transform: rotate(-4deg);
+  width: 220px;
+  right: 0;
+  top: 380px;
+  transform: rotate(2deg);
   z-index: 4;
 }
 
