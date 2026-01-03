@@ -396,7 +396,8 @@ img {
 
 /* Dates Section */
 .paper-dates {
-  width: 90vw;
+  width: 1050px;
+  max-width: 90vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-2deg);
@@ -428,13 +429,18 @@ img {
 }
 
 .paper-lessons {
-  width: 90vw;
+  width: 1125px;
+  max-width: 90vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(0.5deg);
 }
 
 /* 2026 Section - Fire Horse */
+.section-2026 {
+  min-height: 100vh !important;
+}
+
 .section-2026 .section-content {
   width: 100%;
   height: 100vh;
