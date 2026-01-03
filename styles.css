@@ -456,7 +456,7 @@ img {
 }
 
 #reflective {
-  min-height: 25vh !important;
+  min-height: auto !important;
 }
 
 /* 2026 Section - Fire Horse */
