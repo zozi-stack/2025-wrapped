@@ -414,7 +414,8 @@ img {
 
 /* Books Section */
 .paper-books {
-  width: 600px;
+  width: 1050px;
+  max-width: 80vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(1deg);
@@ -423,6 +424,7 @@ img {
 /* Questions Section */
 .paper-questions {
   width: 500px;
+  max-width: 80vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-1deg);
@@ -453,7 +455,7 @@ img {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 527px;
-  max-width: 90vw;
+  max-width: 45vw;
   aspect-ratio: 1 / 1;
   mix-blend-mode: multiply;
   opacity: 0;
@@ -832,15 +834,15 @@ img {
 }
 
 .zoom-image {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 95vw;
+  max-height: 95vh;
   object-fit: contain;
-  transform: scale(0.9);
+  transform: scale(0.9) rotate(0deg);
   transition: transform 0.3s ease;
 }
 
 .zoom-modal.active .zoom-image {
-  transform: scale(1);
+  transform: scale(1) rotate(0deg);
 }
 
 .zoom-close {
