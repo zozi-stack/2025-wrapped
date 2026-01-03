@@ -440,6 +440,7 @@ img {
 
 /* Reflective Writing Section */
 .paper-reflective {
+  max-height: 35vh;
   width: 1000px;
   max-width: 60vw;
   left: 50%;
@@ -452,6 +453,10 @@ img {
 
 .paper-reflective:hover {
   transform: translate(-50%, -50%) scale(1.02);
+}
+
+#reflective {
+  min-height: 25vh !important;
 }
 
 /* 2026 Section - Fire Horse */
