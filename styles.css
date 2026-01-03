@@ -459,7 +459,6 @@ img {
   max-width: 50vw;
   display: block;
   cursor: pointer;
-  transition: transform 0.3s ease;
   transform: rotate(5deg);
   position: relative;
 }
@@ -467,11 +466,6 @@ img {
 .paper-reflective img {
   width: 100%;
   height: auto;
-  box-shadow: -8px 4px 20px 0px rgba(99, 90, 69, 0.1);
-}
-
-.paper-reflective:hover {
-  transform: rotate(5deg) scale(1.02);
 }
 
 /* 2026 Section - Fire Horse */
