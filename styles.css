@@ -587,26 +587,49 @@ img {
 .layout-december img:nth-child(3) { left: 0; top: 272px; }
 .layout-december img:nth-child(4) { left: 158px; top: 330px; }
 
-/* October/September: Row layout */
+/* October: Row layout */
 .layout-row {
   display: flex;
   gap: 8px;
   align-items: flex-end;
 }
 .layout-row img {
-  max-width: 110px;
-  height: auto;
+  width: 85px;
+  height: 184px;
+  object-fit: cover;
 }
 
-/* August: staggered 3 */
-.layout-august {
+/* September: 2 side by side, different widths */
+.layout-september {
   display: flex;
   gap: 8px;
-  align-items: flex-start;
+  align-items: center;
 }
-.layout-august img { max-width: 120px; height: auto; }
-.layout-august img:nth-child(2),
-.layout-august img:nth-child(3) { margin-top: 27px; }
+.layout-september img:nth-child(1) {
+  width: 111px;
+  height: 221px;
+  object-fit: cover;
+}
+.layout-september img:nth-child(2) {
+  width: 164px;
+  height: 221px;
+  object-fit: cover;
+}
+
+/* August: staggered 3 with absolute positioning */
+.layout-august {
+  position: relative;
+  width: 359px;
+  height: 234px;
+}
+.layout-august img {
+  position: absolute;
+  height: 207px;
+  object-fit: cover;
+}
+.layout-august img:nth-child(1) { left: 0; top: 0; width: 95px; }
+.layout-august img:nth-child(2) { left: 103px; top: 27px; width: 124px; }
+.layout-august img:nth-child(3) { left: 235px; top: 27px; width: 124px; }
 
 /* June: staggered 2 - 5.1 top-right, 6.1 bottom-left */
 .layout-june {
