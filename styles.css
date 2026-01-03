@@ -10,7 +10,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  overflow-x: hidden;
   width: 100%;
   max-width: 100%;
 }
@@ -64,7 +63,6 @@ img {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
   min-height: 100vh !important;
   max-height: 100vh;
   height: 100vh;
@@ -91,7 +89,7 @@ img {
   align-items: center;
   justify-content: center;
   min-height: 30vh;
-  padding: 40px 20px;
+  padding: 40px;
 }
 
 .play-content {
@@ -416,6 +414,7 @@ img {
 .paper-books {
   width: 1050px;
   max-width: 80vw;
+  max-height: 30vh;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(1deg);
@@ -425,6 +424,7 @@ img {
 .paper-questions {
   width: 500px;
   max-width: 80vw;
+  max-height: 35vh;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-1deg);
@@ -536,6 +536,84 @@ img {
   right: 80px;
   bottom: 15%;
   transform: rotate(8deg);
+}
+
+/* Piano Section - Overlapping sheet music */
+.section-piano {
+  min-height: 140vh;
+  padding: 80px 20px;
+  overflow: visible !important;
+}
+
+.piano-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.piano-sheet {
+  position: absolute;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+  box-shadow: 
+    -14px 69px 20px 0px rgba(167, 143, 57, 0),
+    -9px 44px 18px 0px rgba(167, 143, 57, 0.01),
+    -5px 25px 15px 0px rgba(167, 143, 57, 0.05),
+    -2px 11px 11px 0px rgba(167, 143, 57, 0.09),
+    -1px 3px 6px 0px rgba(167, 143, 57, 0.1);
+}
+
+.piano-sheet:hover {
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+.piano-sheet img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* GlassEtudeNo.1 - top left, rotated left */
+.piano-1 {
+  width: 254px;
+  height: 337px;
+  left: -20%;
+  top: 0;
+  transform: rotate(-11deg);
+  z-index: 1;
+}
+
+/* Sonata - top right, slight rotation */
+.piano-2 {
+  width: 278px;
+  height: 335px;
+  right: 5%;
+  top: 50px;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+/* GlassEtudeNo.6 - bottom left */
+.piano-3 {
+  width: 303px;
+  height: 401px;
+  left: -5%;
+  top: 280px;
+  transform: rotate(-10deg);
+  z-index: 3;
+}
+
+/* Fly - bottom right */
+.piano-4 {
+  width: 291px;
+  height: 401px;
+  right: -5%;
+  top: 340px;
+  transform: rotate(-4deg);
+  z-index: 4;
 }
 
 /* Sketches Gallery (Postmarks-inspired layout) */
