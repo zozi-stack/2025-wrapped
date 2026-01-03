@@ -396,7 +396,8 @@ img {
 
 /* Dates Section */
 .paper-dates {
-  width: 1400px;
+  width: 700px;
+  max-width: 90vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-2deg);
@@ -428,7 +429,8 @@ img {
 }
 
 .paper-lessons {
-  width: 1500px;
+  width: 750px;
+  max-width: 90vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(0.5deg);
