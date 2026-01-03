@@ -553,7 +553,6 @@ img {
 /* Angled drop shadow for sketch images */
 .sketch-images img {
   height: auto;
-  max-height: 220px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -569,6 +568,130 @@ img {
 
 .sketch-images img:hover {
   transform: scale(1.05);
+}
+
+/* December: 2x2 staggered grid */
+.layout-december {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  position: relative;
+  width: 305px;
+}
+.layout-december img:nth-child(1) { width: 147px; height: 262px; object-fit: cover; }
+.layout-december img:nth-child(2) { width: 147px; height: 262px; object-fit: cover; margin-top: 58px; }
+.layout-december img:nth-child(3) { width: 147px; height: 227px; object-fit: cover; }
+.layout-december img:nth-child(4) { width: 147px; height: 227px; object-fit: cover; margin-top: 58px; }
+
+/* October/September: Row layout */
+.layout-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+.layout-row img {
+  width: 85px;
+  height: 184px;
+  object-fit: cover;
+}
+
+/* August: staggered 3 */
+.layout-august {
+  display: grid;
+  grid-template-columns: 95px 124px 124px;
+  gap: 8px;
+  position: relative;
+}
+.layout-august img:nth-child(1) { width: 95px; height: 207px; object-fit: cover; }
+.layout-august img:nth-child(2) { width: 124px; height: 207px; object-fit: cover; margin-top: 27px; }
+.layout-august img:nth-child(3) { width: 124px; height: 207px; object-fit: cover; margin-top: 27px; }
+
+/* June: staggered 2 */
+.layout-june {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 302px;
+}
+.layout-june img:nth-child(1) { width: 147px; height: 220px; object-fit: cover; justify-self: end; }
+.layout-june img:nth-child(2) { width: 147px; height: 220px; object-fit: cover; margin-top: 74px; grid-column: 1; grid-row: 2; }
+
+/* May: stacked + staggered */
+.layout-may {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 253px;
+}
+.layout-may .may-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.layout-may .may-top img {
+  width: 222px;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.layout-may .may-bottom {
+  display: grid;
+  grid-template-columns: 114px 131px;
+  gap: 8px;
+}
+.layout-may .may-bottom img:nth-child(1) { width: 114px; height: 87px; object-fit: cover; }
+.layout-may .may-bottom img:nth-child(2) { width: 131px; height: 87px; object-fit: cover; margin-top: 21px; }
+
+/* April: single tall */
+.layout-single {
+  display: flex;
+  justify-content: center;
+}
+.layout-single img {
+  width: 141px;
+  height: auto;
+  aspect-ratio: 2863/4096;
+  object-fit: cover;
+}
+
+/* March: 2x2 mixed sizes */
+.layout-march {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 287px;
+}
+.layout-march .march-top {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.layout-march .march-top img {
+  width: 139px;
+  height: 139px;
+  object-fit: cover;
+}
+.layout-march .march-bottom {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.layout-march .march-bottom img:nth-child(1) { width: 100px; height: 178px; object-fit: cover; }
+.layout-march .march-bottom img:nth-child(2) { width: 177px; height: 177px; object-fit: cover; }
+
+/* Pre January: 3 stacked vertically */
+.layout-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 221px;
+}
+.layout-stack img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
 /* Piano Gallery */
