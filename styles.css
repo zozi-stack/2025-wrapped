@@ -607,14 +607,19 @@ img {
 .layout-august img:nth-child(2),
 .layout-august img:nth-child(3) { margin-top: 27px; }
 
-/* June: staggered 2 */
+/* June: staggered 2 - 5.1 top-right, 6.1 bottom-left */
 .layout-june {
   position: relative;
   width: 302px;
-  height: 320px;
+  height: 294px;
 }
-.layout-june img { max-width: 147px; height: auto; position: absolute; }
-.layout-june img:nth-child(1) { right: 0; top: 0; }
+.layout-june img { 
+  position: absolute;
+  width: 147px;
+  height: 220px;
+  object-fit: cover;
+}
+.layout-june img:nth-child(1) { left: 155px; top: 0; }
 .layout-june img:nth-child(2) { left: 0; top: 74px; }
 
 /* May: stacked + staggered */
