@@ -665,15 +665,25 @@ img {
   justify-content: center;
 }
 .layout-march .march-top img {
-  max-width: 139px;
-  height: auto;
+  width: 139px;
+  height: 139px;
+  object-fit: cover;
 }
 .layout-march .march-bottom {
   display: flex;
   gap: 8px;
   align-items: center;
 }
-.layout-march .march-bottom img { max-width: 140px; height: auto; }
+.layout-march .march-bottom img:nth-child(1) { 
+  width: 100px; 
+  height: 178px; 
+  object-fit: cover; 
+}
+.layout-march .march-bottom img:nth-child(2) { 
+  width: 177px; 
+  height: 177px; 
+  object-fit: cover; 
+}
 
 /* Pre January: 3 stacked vertically */
 .layout-stack {
