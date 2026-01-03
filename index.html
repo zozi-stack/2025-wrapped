@@ -143,16 +143,9 @@
         <div class="sketch-row">
           <span class="month-label">October</span>
           <div class="sketch-images">
-            <img src="images/sketches/10.1.png" alt="Sketch 10.1" class="zoomable">
-            <img src="images/sketches/10.2.png" alt="Sketch 10.2" class="zoomable">
-            <img src="images/sketches/11.1.png" alt="Sketch 11.1" class="zoomable">
-            <img src="images/sketches/12.1.png" alt="Sketch 12.1" class="zoomable">
-            <img src="images/sketches/12.2.png" alt="Sketch 12.2" class="zoomable">
             <img src="images/sketches/12.3.png" alt="Sketch 12.3" class="zoomable">
-            <img src="images/sketches/13.1.png" alt="Sketch 13.1" class="zoomable">
-            <img src="images/sketches/13.2.png" alt="Sketch 13.2" class="zoomable">
-            <img src="images/sketches/14.1.png" alt="Sketch 14.1" class="zoomable">
-            <img src="images/sketches/14.2.png" alt="Sketch 14.2" class="zoomable">
+            <img src="images/sketches/12.2.png" alt="Sketch 12.2" class="zoomable">
+            <img src="images/sketches/12.1.png" alt="Sketch 12.1" class="zoomable">
           </div>
         </div>
         <div class="sketch-row">
@@ -165,11 +158,9 @@
         <div class="sketch-row">
           <span class="month-label">August</span>
           <div class="sketch-images">
+            <img src="images/sketches/8.1.png" alt="Sketch 8.1" class="zoomable">
             <img src="images/sketches/7.1.png" alt="Sketch 7.1" class="zoomable">
             <img src="images/sketches/7.2.png" alt="Sketch 7.2" class="zoomable">
-            <img src="images/sketches/8.1.png" alt="Sketch 8.1" class="zoomable">
-            <img src="images/sketches/8.2.png" alt="Sketch 8.2" class="zoomable">
-            <img src="images/sketches/8.3.png" alt="Sketch 8.3" class="zoomable">
           </div>
         </div>
         <div class="sketch-row">
@@ -182,7 +173,8 @@
         <div class="sketch-row">
           <span class="month-label">May</span>
           <div class="sketch-images">
-            <img src="images/sketches/4.1.png" alt="Sketch 4.1" class="zoomable">
+            <img src="images/sketches/3.2.png" alt="Sketch 3.2" class="zoomable">
+            <img src="images/sketches/3.3.png" alt="Sketch 3.3" class="zoomable">
             <img src="images/sketches/4.2.png" alt="Sketch 4.2" class="zoomable">
             <img src="images/sketches/4.3.png" alt="Sketch 4.3" class="zoomable">
           </div>
@@ -191,16 +183,14 @@
           <span class="month-label">April</span>
           <div class="sketch-images">
             <img src="images/sketches/3.1.png" alt="Sketch 3.1" class="zoomable">
-            <img src="images/sketches/3.2.png" alt="Sketch 3.2" class="zoomable">
-            <img src="images/sketches/3.3.png" alt="Sketch 3.3" class="zoomable">
           </div>
         </div>
         <div class="sketch-row">
           <span class="month-label">March</span>
           <div class="sketch-images">
             <img src="images/sketches/2.1.png" alt="Sketch 2.1" class="zoomable">
-            <img src="images/sketches/2.2.png" alt="Sketch 2.2" class="zoomable">
             <img src="images/sketches/2.3.png" alt="Sketch 2.3" class="zoomable">
+            <img src="images/sketches/2.2.png" alt="Sketch 2.2" class="zoomable">
             <img src="images/sketches/2.4.png" alt="Sketch 2.4" class="zoomable">
           </div>
         </div>
@@ -334,13 +324,26 @@
     }
     
     // Scroll to bottom on load (start at title)
+    function scrollToBottom() {
+      const maxScroll = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+      window.scrollTo(0, maxScroll);
+    }
+    
+    // Immediate scroll
+    scrollToBottom();
+    
+    // Also on load event with delays for safety
     window.addEventListener('load', () => {
-      // Small delay to ensure full render
+      scrollToBottom();
       setTimeout(() => {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
-        // Trigger title animation after scroll
+        scrollToBottom();
         setTimeout(animateTitleLetters, 100);
-      }, 50);
+      }, 100);
+      // Extra fallback for slow connections
+      setTimeout(scrollToBottom, 500);
     });
 
     // TOC navigation

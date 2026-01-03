@@ -5,23 +5,25 @@
   padding: 0;
 }
 
-html {
+html, body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
   min-height: 100vh;
-  overflow-x: hidden;
   font-family: 'TRJN DaVinci', 'Cormorant Garamond', Georgia, serif;
-  background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
+  background: #f9f9f9;
 }
 
 img {
   display: block;
-  max-width: none;
+  max-width: 100%;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -29,22 +31,31 @@ img {
 /* Fixed Shadow Overlay */
 .shadow-overlay {
   position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.shadow-img {
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 1769px;
   height: 995px;
-  mix-blend-mode: multiply;
-  opacity: 0.75;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.shadow-img {
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
 }
+
 
 /* Title Section */
 .section-title {
@@ -65,7 +76,8 @@ img {
   top: 50%;
   transform: translateY(-50%);
   width: 753px;
-  height: 753px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   mix-blend-mode: multiply;
   pointer-events: none;
@@ -314,6 +326,7 @@ img {
 /* Scroll Container */
 .scroll-container {
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* Sections */
@@ -325,6 +338,7 @@ img {
   align-items: center;
   justify-content: center;
   background: #ffffff;
+  overflow: hidden;
 }
 
 .section-content {
@@ -486,32 +500,29 @@ img {
 
 /* Sketches Gallery (Postmarks-inspired layout) */
 .section-sketches {
-  padding: 60px 80px 60px 200px; /* Extra left padding for TOC */
+  padding: 80px 20px;
   height: auto;
-  min-height: 130vh; /* Match other sections for consistent spacing */
+  min-height: auto;
+  display: block;
 }
 
 .sketches-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 120px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 360px;
   margin: 0 auto;
+  padding: 64px 0;
 }
 
 .sketch-row {
   display: flex;
-  align-items: flex-start;
-  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
   opacity: 0;
   transition: opacity 1.2s ease;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(87, 85, 83, 0.1);
-}
-
-.sketch-row:last-child {
-  border-bottom: none;
 }
 
 .sketch-row.visible {
@@ -519,37 +530,44 @@ img {
 }
 
 .month-label {
-  font-family: 'David Libre', Georgia, serif;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  color: #575553;
-  opacity: 0.9;
-  text-align: left;
-  width: 120px;
-  flex-shrink: 0;
-  padding-top: 8px;
-  text-transform: uppercase;
+  font-family: 'TRJN DaVinci', 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: #453b3b;
+  text-align: center;
+  width: 100%;
 }
 
 .sketch-images {
   display: flex;
-  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 16px;
-  flex: 1;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
 }
 
+/* Angled drop shadow for sketch images */
 .sketch-images img {
-  height: 140px;
+  height: auto;
+  max-height: 220px;
   width: auto;
+  max-width: 100%;
   object-fit: contain;
   cursor: zoom-in;
   transition: transform 0.3s ease;
+  box-shadow: 
+    -47px 65px 22px 0px rgba(111, 88, 47, 0),
+    -30px 41px 20px 0px rgba(111, 88, 47, 0.01),
+    -17px 23px 17px 0px rgba(111, 88, 47, 0.05),
+    -7px 10px 13px 0px rgba(111, 88, 47, 0.09),
+    -2px 3px 7px 0px rgba(111, 88, 47, 0.1);
 }
 
 .sketch-images img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Piano Gallery */
@@ -796,7 +814,16 @@ img {
   }
   
   .section-sketches {
-    padding: 120px 30px 60px 30px; /* Top padding for TOC on mobile */
+    padding: 100px 20px 60px 20px;
+  }
+  
+  .sketches-container {
+    gap: 80px;
+    max-width: 320px;
+  }
+  
+  .sketch-images img {
+    max-height: 180px;
   }
 }
 
@@ -832,4 +859,34 @@ img {
     transform: scale(0.6);
   }
   
+  .paper-scatter-1,
+  .paper-scatter-2,
+  .paper-scatter-3 {
+    display: none;
+  }
+  
+  .section {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .title-row {
+    gap: 40px;
+    flex-direction: column;
+  }
+  
+  .sketches-container {
+    gap: 60px;
+    max-width: 280px;
+  }
+  
+  .sketch-images img {
+    max-height: 140px;
+    box-shadow: 
+      -20px 28px 12px 0px rgba(111, 88, 47, 0),
+      -13px 18px 10px 0px rgba(111, 88, 47, 0.01),
+      -7px 10px 8px 0px rgba(111, 88, 47, 0.05),
+      -3px 4px 6px 0px rgba(111, 88, 47, 0.09),
+      -1px 1px 3px 0px rgba(111, 88, 47, 0.1);
+  }
 }
