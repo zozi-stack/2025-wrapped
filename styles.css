@@ -228,7 +228,6 @@ img {
 
 /* Fixed Table of Contents */
 .toc {
-  display: none;  /* Hidden */
   position: fixed;
   left: 16px;
   top: 50%;
