@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Op. 2025 — The Year of the Snake</title>
+  <title>My 2025 Wrapped — The Year of the Snake</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=David+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,244 +15,229 @@
     <img src="images/Textures/ShadowHorizontal.png" alt="" class="shadow-img">
   </div>
 
-  <!-- Table of Contents -->
-  <nav class="toc">
-    <div class="toc-content">
-      <ul class="toc-list">
-        <li class="toc-item active" data-index="0">No. 1. Birthday</li>
-        <li class="toc-item" data-index="1">No. 2. Sketches</li>
-        <li class="toc-item" data-index="3">No. 3. Dates</li>
-        <li class="toc-item" data-index="6">No. 4. Books</li>
-        <li class="toc-item" data-index="8">No. 5. Piano</li>
-        <li class="toc-item" data-index="11">No. 6. Questions</li>
-        <li class="toc-item" data-index="13">No. 7. Lessons</li>
-        <li class="toc-item" data-index="15">No. 8. 2026</li>
-      </ul>
-      <img src="images/Brace.svg" alt="" class="brace">
-    </div>
-  </nav>
+  <!-- Background -->
+  <div class="bg"></div>
 
-  <!-- Main Container -->
+  <!-- Main Content -->
   <main class="main-container">
-    <!-- Title - centered above stack -->
+    <!-- Header -->
     <header class="header">
       <h1 class="title">My <em>2025</em> Wrapped</h1>
       <div class="subtitle-row">
-        <p class="subtitle">(The Year of the Snake)</p>
+        <p class="subtitle">(The Year of the <span class="snake">Snake</span>)</p>
         <p class="author">Zoe 郑</p>
       </div>
     </header>
 
-    <!-- Paper Stack Area -->
-    <div class="stack-area">
-      <!-- Active draggable stack -->
+    <!-- Content Area - TOC + Stack side by side -->
+    <div class="content-area">
+      <!-- Table of Contents -->
+      <nav class="toc">
+        <ul class="toc-list">
+          <li class="toc-item" data-section="sketches">No. 1. Sketches</li>
+          <li class="toc-item" data-section="dates">No. 2. Dates</li>
+          <li class="toc-item" data-section="books">No. 3. Books</li>
+          <li class="toc-item" data-section="piano">No. 4. Piano</li>
+          <li class="toc-item" data-section="lessons">No. 5. Lessons</li>
+          <li class="toc-item" data-section="questions">No. 6. Questions</li>
+          <li class="toc-item" data-section="2026">No. 7. 2026</li>
+        </ul>
+      </nav>
+
+      <!-- Paper Stack -->
       <div class="paper-stack" id="paper-stack">
-        <div class="paper" data-index="0">
-          <img src="images/BirthdayPolaroids.png" alt="Birthday" draggable="false">
+        <!-- 2026 Symbol - Bottom/not swipable -->
+        <div class="paper paper-2026" data-section="2026">
+          <img src="images/2026 Symbol.png" alt="2026">
         </div>
-        <div class="paper" data-index="1">
-          <img src="images/sketches/Sketches-PreJ.png" alt="Sketches" draggable="false">
+
+        <!-- Birthday Polaroids -->
+        <div class="paper paper-birthday swipable" data-section="questions">
+          <img src="images/BirthdayPolaroids.png" alt="Birthday Polaroids">
         </div>
-        <div class="paper" data-index="2">
-          <img src="images/sketches/Sketches-Mar.png" alt="Sketches" draggable="false">
+
+        <!-- Reflective Writing -->
+        <div class="paper paper-reflective swipable" data-section="questions">
+          <img src="images/ReflectiveWriting.png" alt="Reflective Writing">
         </div>
-        <div class="paper" data-index="3">
-          <img src="images/Dates.png" alt="Dates" draggable="false">
+
+        <!-- Questions -->
+        <div class="paper paper-questions swipable" data-section="questions">
+          <img src="images/Questions.png" alt="Questions">
         </div>
-        <div class="paper" data-index="4">
-          <img src="images/sketches/Sketches-April.png" alt="Sketches" draggable="false">
+
+        <!-- Lessons - now above questions -->
+        <div class="paper paper-lessons swipable" data-section="lessons">
+          <img src="images/Lessons.png" alt="Lessons">
         </div>
-        <div class="paper" data-index="5">
-          <img src="images/sketches/Sketches-May.png" alt="Sketches" draggable="false">
+
+        <!-- Piano - Fly -->
+        <div class="paper paper-piano-fly swipable" data-section="piano">
+          <img src="images/piano/Fly.png" alt="Fly">
         </div>
-        <div class="paper" data-index="6">
-          <img src="images/Books.png" alt="Books" draggable="false">
+
+        <!-- Piano - Etude 6 -->
+        <div class="paper paper-piano-etude6 swipable" data-section="piano">
+          <img src="images/piano/GlassEtudeNo.6.png" alt="Glass Etude No. 6">
         </div>
-        <div class="paper" data-index="7">
-          <img src="images/sketches/Sketches-June.png" alt="Sketches" draggable="false">
+
+        <!-- Piano - Etude 1 -->
+        <div class="paper paper-piano-etude1 swipable" data-section="piano">
+          <img src="images/piano/GlassEtudeNo.1.png" alt="Glass Etude No. 1">
         </div>
-        <div class="paper" data-index="8">
-          <img src="images/piano/GlassEtudeNo.1.png" alt="Piano" draggable="false">
+
+        <!-- Piano - Sonata -->
+        <div class="paper paper-piano-sonata swipable" data-section="piano">
+          <img src="images/piano/Sonata.png" alt="Sonata">
         </div>
-        <div class="paper" data-index="9">
-          <img src="images/sketches/Sketches-Aug.png" alt="Sketches" draggable="false">
+
+        <!-- Books -->
+        <div class="paper paper-books swipable" data-section="books">
+          <img src="images/Books.png" alt="Books">
         </div>
-        <div class="paper" data-index="10">
-          <img src="images/sketches/Sketches-Sep.png" alt="Sketches" draggable="false">
+
+        <!-- Dates -->
+        <div class="paper paper-dates swipable" data-section="dates">
+          <img src="images/Dates.png" alt="Dates">
         </div>
-        <div class="paper" data-index="11">
-          <img src="images/Questions.png" alt="Questions" draggable="false">
-        </div>
-        <div class="paper" data-index="12">
-          <img src="images/sketches/Sketches-Oct.png" alt="Sketches" draggable="false">
-        </div>
-        <div class="paper" data-index="13">
-          <img src="images/Lessons.png" alt="Lessons" draggable="false">
-        </div>
-        <div class="paper" data-index="14">
-          <img src="images/sketches/Sketches-Dec.png" alt="Sketches" draggable="false">
-        </div>
-        <div class="paper paper-final" data-index="15">
-          <img src="images/2026 Symbol.png" alt="2026" draggable="false">
+
+        <!-- April Sketch - Top layer -->
+        <div class="paper paper-april swipable" data-section="sketches">
+          <img src="images/sketches/Sketches_April.png" alt="April Sketch">
         </div>
       </div>
     </div>
   </main>
 
   <script>
-    const paperStack = document.getElementById('paper-stack');
-    const papers = Array.from(document.querySelectorAll('.paper'));
+    const papers = Array.from(document.querySelectorAll('.paper.swipable')).reverse();
     const tocItems = document.querySelectorAll('.toc-item');
     
-    let currentIndex = 0;
     let isDragging = false;
     let startX = 0;
-    let currentX = 0;
+    let startY = 0;
     let activePaper = null;
 
-    // Section start indices
-    const sectionStarts = [0, 1, 3, 6, 8, 11, 13, 15];
-    
-    // Update TOC highlight based on which section the current index is in
-    function updateTOC(index) {
-      let activeSection = 0;
-      for (let i = sectionStarts.length - 1; i >= 0; i--) {
-        if (index >= sectionStarts[i]) {
-          activeSection = i;
-          break;
-        }
+    // Update TOC highlight based on top visible paper
+    function updateTOC() {
+      const visiblePapers = papers.filter(p => !p.classList.contains('swiped'));
+      if (visiblePapers.length === 0) {
+        tocItems.forEach(item => {
+          item.classList.toggle('active', item.dataset.section === '2026');
+        });
+        return;
       }
-      tocItems.forEach((item, i) => {
-        item.classList.toggle('active', i === activeSection);
+      
+      const topPaper = visiblePapers[0];
+      const section = topPaper.dataset.section;
+      
+      tocItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.section === section);
       });
     }
 
-    // Get the current top paper
+    // Get the current top paper (first non-swiped paper)
     function getTopPaper() {
-      return papers[currentIndex];
+      return papers.find(p => !p.classList.contains('swiped'));
     }
 
-    // Swipe paper - just hide it (disappear)
-    function swipePaper() {
-      if (currentIndex >= papers.length - 1) return; // Don't swipe the last paper (2026)
-      
+    // Swipe paper away
+    function swipePaper(paper) {
+      if (!paper) return;
+      paper.classList.add('swiped');
+      updateTOC();
+    }
+
+    // Simple swipe handlers
+    function handleStart(e) {
       const paper = getTopPaper();
       if (!paper) return;
-
-      // Just hide the paper (make it disappear)
-      paper.classList.add('hidden');
-      
-      currentIndex++;
-      updateTOC(currentIndex);
-    }
-
-    // Bring paper back
-    function bringBackPaper() {
-      if (currentIndex <= 0) return;
-      
-      currentIndex--;
-
-      // Show the paper again
-      const paper = papers[currentIndex];
-      paper.classList.remove('hidden');
-      paper.style.transform = '';
-      
-      updateTOC(currentIndex);
-    }
-
-    // Mouse/Touch handlers
-    function handleStart(e) {
-      // Don't allow dragging the final 2026 paper
-      if (currentIndex >= papers.length - 1) return;
-      
-      const paper = getTopPaper();
-      if (!paper || paper.classList.contains('paper-final')) return;
 
       isDragging = true;
       activePaper = paper;
       startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-      currentX = startX;
-      
-      paper.style.transition = 'none';
-      paper.style.cursor = 'grabbing';
+      startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
     }
 
-    function handleMove(e) {
+    function handleEnd(e) {
       if (!isDragging || !activePaper) return;
       
-      currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-      const deltaX = currentX - startX;
+      const endX = e.type.includes('mouse') ? e.clientX : e.changedTouches[0].clientX;
+      const endY = e.type.includes('mouse') ? e.clientY : e.changedTouches[0].clientY;
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
       
-      // Allow dragging left (add rotation effect)
-      const rotation = deltaX * 0.03;
-      activePaper.style.transform = `translateX(calc(-50% + ${deltaX}px)) rotate(${rotation}deg)`;
-    }
-
-    function handleEnd() {
-      if (!isDragging || !activePaper) return;
-      
-      isDragging = false;
-      activePaper.style.transition = '';
-      activePaper.style.cursor = '';
-      
-      const deltaX = currentX - startX;
-      
-      // If dragged far enough left, swipe it
-      if (deltaX < -100) {
-        swipePaper();
-      } else if (deltaX > 100) {
-        bringBackPaper();
-      } else {
-        // Reset position to centered
-        const idx = activePaper.dataset.index;
-        const rotations = [1, -1.2, 0.8, 3, -0.6, 1.4, -0.9, 0.5, -1.1, 0.7, -0.4, 1.3, -0.8, 1.5, -1, 0.3];
-        activePaper.style.transform = `translateX(-50%) rotate(${rotations[idx]}deg)`;
+      // Check if it's a horizontal swipe (more horizontal than vertical)
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+        // Swipe detected - fade out and slide away
+        const paper = activePaper;
+        paper.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+        paper.style.transform = `translateX(${deltaX > 0 ? 300 : -300}px)`;
+        paper.style.opacity = '0';
+        
+        setTimeout(() => {
+          swipePaper(paper);
+        }, 300);
       }
       
+      isDragging = false;
       activePaper = null;
     }
 
-    // Event listeners for the stack
+    // Event listeners
+    const paperStack = document.getElementById('paper-stack');
     paperStack.addEventListener('mousedown', handleStart);
-    document.addEventListener('mousemove', handleMove);
     document.addEventListener('mouseup', handleEnd);
 
     paperStack.addEventListener('touchstart', handleStart, { passive: true });
-    document.addEventListener('touchmove', handleMove, { passive: true });
     document.addEventListener('touchend', handleEnd);
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        swipePaper();
-      } else if (e.key === 'ArrowRight') {
-        bringBackPaper();
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        const paper = getTopPaper();
+        if (paper) {
+          paper.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+          paper.style.transform = `translateX(${e.key === 'ArrowLeft' ? -300 : 300}px)`;
+          paper.style.opacity = '0';
+          setTimeout(() => swipePaper(paper), 300);
+        }
       }
     });
 
-    // TOC click navigation
+    // TOC click navigation - go to that section (bring back papers if needed)
     tocItems.forEach((item) => {
       item.addEventListener('click', () => {
-        const targetIndex = parseInt(item.dataset.index);
+        const targetSection = item.dataset.section;
         
-        // Reset all papers
-        papers.forEach((paper, i) => {
-          if (i < targetIndex) {
-            paper.classList.add('hidden');
+        // Find the first paper with this section
+        const targetPaperIndex = papers.findIndex(p => p.dataset.section === targetSection);
+        
+        if (targetPaperIndex === -1) return;
+        
+        // Reset all papers up to and including the target, swipe papers before it
+        papers.forEach((paper, index) => {
+          if (index < targetPaperIndex) {
+            // Papers before target should be swiped
+            paper.classList.add('swiped');
+            paper.style.transition = 'transform 0.25s ease-out, opacity 0.2s ease-out';
+            paper.style.transform = `translateX(-300px)`;
+            paper.style.opacity = '0';
           } else {
-            paper.classList.remove('hidden');
+            // Papers at or after target should be visible
+            paper.classList.remove('swiped');
+            paper.style.transition = 'transform 0.25s ease-out, opacity 0.2s ease-out';
             paper.style.transform = '';
+            paper.style.opacity = '';
           }
         });
         
-        currentIndex = targetIndex;
-        updateTOC(currentIndex);
+        updateTOC();
       });
     });
 
     // Initialize
-    updateTOC(0);
+    updateTOC();
   </script>
 </body>
 </html>
-
