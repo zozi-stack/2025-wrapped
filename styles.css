@@ -566,8 +566,8 @@ img {
 /* Piano Texture - faded sheet music background */
 .piano-texture-container {
   position: relative;
-  width: 100%;
-  height: 0;
+  width: 400%;
+  height: 100%;
   overflow: visible;
   pointer-events: none;
 }
@@ -575,9 +575,8 @@ img {
 .piano-texture {
   position: absolute;
   left: 50%;
-  top: -200px;
   transform: translateX(-50%) rotate(-11.41deg);
-  width: 200vw;
+  width: 400vw;
   opacity: 0.05;
   mix-blend-mode: multiply;
 }
