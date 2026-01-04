@@ -7,407 +7,252 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=David+Libre:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    @font-face {
-      font-family: 'TRJN DaVinci';
-      src: url('fonts/TRJNDaVinci-Medium.woff2') format('woff2'),
-           url('fonts/TRJNDaVinci-Medium.woff') format('woff');
-      font-weight: 500;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'TRJN DaVinci';
-      src: url('fonts/TRJNDaVinci-MediumItalic.woff2') format('woff2'),
-           url('fonts/TRJNDaVinci-MediumItalic.woff') format('woff');
-      font-weight: 500;
-      font-style: italic;
-    }
-    @font-face {
-      font-family: 'TRJN DaVinci';
-      src: url('fonts/TRJNDaVinci-Italic.woff2') format('woff2'),
-           url('fonts/TRJNDaVinci-Italic.woff') format('woff');
-      font-weight: 400;
-      font-style: italic;
-    }
-  </style>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Zoom Modal -->
-  <div class="zoom-modal" id="zoom-modal">
-    <button class="zoom-close" id="zoom-close">×</button>
-    <img src="" alt="" class="zoom-image" id="zoom-image">
-  </div>
-
-  <!-- Fixed Shadow Overlay -->
+  <!-- Shadow Overlay -->
   <div class="shadow-overlay">
-    <img src="images/Textures/Shadow.png" alt="" class="shadow-img">
+    <img src="images/Textures/ShadowHorizontal.png" alt="" class="shadow-img">
   </div>
 
-  <!-- Fixed Navigation -->
+  <!-- Table of Contents -->
   <nav class="toc">
-    <h3 class="toc-title">Contents</h3>
-    <ul class="toc-list">
-      <li class="toc-item" data-section="sketches">No. 1. Sketches</li>
-      <li class="toc-item" data-section="dates">No. 2. Dates</li>
-      <li class="toc-item" data-section="books">No. 3. Books</li>
-      <li class="toc-item" data-section="questions">No. 4. Questions</li>
-      <li class="toc-item" data-section="lessons">No. 5. Lessons</li>
-      <li class="toc-item" data-section="2026">No. 6. 2026</li>
-    </ul>
+    <div class="toc-content">
+      <ul class="toc-list">
+        <li class="toc-item active" data-index="0">No. 1. Birthday</li>
+        <li class="toc-item" data-index="1">No. 2. Sketches</li>
+        <li class="toc-item" data-index="3">No. 3. Dates</li>
+        <li class="toc-item" data-index="6">No. 4. Books</li>
+        <li class="toc-item" data-index="8">No. 5. Piano</li>
+        <li class="toc-item" data-index="11">No. 6. Questions</li>
+        <li class="toc-item" data-index="13">No. 7. Lessons</li>
+        <li class="toc-item" data-index="15">No. 8. 2026</li>
+      </ul>
+      <img src="images/Brace.svg" alt="" class="brace">
+    </div>
   </nav>
 
-  <!-- Scrolling Content (reversed order - scroll UP to progress) -->
-  <main class="scroll-container">
-    
-    <!-- Section 8: 2026 -->
-    <section class="section section-2026" id="2026">
-      <div class="section-content">
-        <!-- 2026 Symbol -->
-        <div class="symbol-2026">
-          <img src="images/2026 Symbol.png" alt="2026 Symbol">
+  <!-- Main Container -->
+  <main class="main-container">
+    <!-- Title - centered above stack -->
+    <header class="header">
+      <h1 class="title">My <em>2025</em> Wrapped</h1>
+      <div class="subtitle-row">
+        <p class="subtitle">(The Year of the Snake)</p>
+        <p class="author">Zoe 郑</p>
+      </div>
+    </header>
+
+    <!-- Paper Stack Area -->
+    <div class="stack-area">
+      <!-- Active draggable stack -->
+      <div class="paper-stack" id="paper-stack">
+        <div class="paper" data-index="0">
+          <img src="images/BirthdayPolaroids.png" alt="Birthday" draggable="false">
+        </div>
+        <div class="paper" data-index="1">
+          <img src="images/sketches/Sketches-PreJ.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="2">
+          <img src="images/sketches/Sketches-Mar.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="3">
+          <img src="images/Dates.png" alt="Dates" draggable="false">
+        </div>
+        <div class="paper" data-index="4">
+          <img src="images/sketches/Sketches-April.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="5">
+          <img src="images/sketches/Sketches-May.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="6">
+          <img src="images/Books.png" alt="Books" draggable="false">
+        </div>
+        <div class="paper" data-index="7">
+          <img src="images/sketches/Sketches-June.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="8">
+          <img src="images/piano/GlassEtudeNo.1.png" alt="Piano" draggable="false">
+        </div>
+        <div class="paper" data-index="9">
+          <img src="images/sketches/Sketches-Aug.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="10">
+          <img src="images/sketches/Sketches-Sep.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="11">
+          <img src="images/Questions.png" alt="Questions" draggable="false">
+        </div>
+        <div class="paper" data-index="12">
+          <img src="images/sketches/Sketches-Oct.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper" data-index="13">
+          <img src="images/Lessons.png" alt="Lessons" draggable="false">
+        </div>
+        <div class="paper" data-index="14">
+          <img src="images/sketches/Sketches-Dec.png" alt="Sketches" draggable="false">
+        </div>
+        <div class="paper paper-final" data-index="15">
+          <img src="images/2026 Symbol.png" alt="2026" draggable="false">
         </div>
       </div>
-    </section>
-
-    <!-- Section 6: Lessons (with Reflective Writing and Birthday Polaroid above) -->
-    <section class="section section-lessons" id="lessons">
-      <div class="section-content lessons-container">
-        <!-- Birthday Polaroid and Reflective Writing positioned above Lessons -->
-        <div class="above-lessons">
-          <div class="paper paper-polaroid fade-element">
-            <img src="images/BirthdayPolaroids.png" alt="Birthday Polaroid" class="zoomable">
-          </div>
-          <a href="https://www.notion.so/2025-Journaling-2dd483bc998180a09c2dff0c7cf79cef?source=copy_link" target="_blank" class="paper paper-reflective fade-element">
-            <img src="images/ReflectiveWriting.png" alt="Reflective Writing">
-          </a>
-        </div>
-        <!-- Main Lessons paper -->
-        <div class="paper paper-lessons fade-element">
-          <img src="images/Lessons.png" alt="Lessons" class="zoomable">
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 5: Questions -->
-    <section class="section" id="questions">
-      <div class="section-content">
-        <div class="paper paper-questions">
-          <img src="images/Questions.png" alt="Questions" class="zoomable">
-        </div>
-      </div>
-    </section>
-
-    <!-- Piano Texture (between Questions and Piano) -->
-    <div class="piano-texture-container">
-      <img src="images/Textures/PianoTex.png" alt="" class="piano-texture">
     </div>
-
-    <!-- Section 4: Piano -->
-    <section class="section section-piano" id="piano">
-      <div class="piano-container">
-        <img src="images/piano/GlassEtudeNo.1.png" alt="Glass Etude No. 1" class="piano-1 zoomable">
-        <img src="images/piano/Sonata.png" alt="Moonlight Sonata" class="piano-2 zoomable">
-        <img src="images/piano/GlassEtudeNo.6.png" alt="Glass Etude No. 6" class="piano-3 zoomable">
-        <img src="images/piano/Fly.png" alt="Fly" class="piano-4 zoomable">
-      </div>
-    </section>
-
-    <!-- Section 3: Books -->
-    <section class="section" id="books">
-      <div class="section-content">
-        <div class="paper paper-books">
-          <img src="images/Books.png?v=2" alt="Books" class="zoomable">
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 2: Dates -->
-    <section class="section" id="dates">
-      <div class="section-content">
-        <div class="paper paper-dates">
-          <img src="images/Dates.png" alt="Best Dates" class="zoomable">
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 1: Sketches (9 months, reversed for scroll-up) -->
-    <section class="section section-sketches" id="sketches">
-      <div class="sketches-container">
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-Dec.png" alt="December Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-Oct.png" alt="October Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-Sep.png" alt="September Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-Aug.png" alt="August Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-June.png" alt="June Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-May.png" alt="May Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-April.png" alt="April Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-Mar.png" alt="March Sketches" class="zoomable">
-        </div>
-        <div class="sketch-month">
-          <img src="images/sketches/Sketches-PreJ.png" alt="Pre January Sketches" class="zoomable">
-        </div>
-      </div>
-    </section>
-
-    <!-- Title Section (starting point - at bottom) -->
-    <section class="section section-title" id="title">
-      <img src="images/snake-texture.png" alt="" class="snake-texture">
-      <div class="title-content">
-        <div class="title-caption">
-          <h1 class="title-main">My <span class="year-italic">2025</span> Wrapped</h1>
-          <div class="title-row">
-            <span class="opus">The year of the snake</span>
-            <span class="author">Zoe 郑</span>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-hint">↑ scroll up to begin</div>
-    </section>
-
   </main>
 
   <script>
-    // Title letter animation (inspired by Artisans de Genève)
-    function animateTitleLetters() {
-      const titleMain = document.querySelector('.title-main');
-      if (!titleMain) return;
-      
-      // Get the original HTML (to preserve the italic span)
-      const originalHTML = titleMain.innerHTML;
-      
-      // Process text nodes and wrap letters
-      function wrapLetters(element) {
-        let letterIndex = 0;
-        
-        Array.from(element.childNodes).forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            const text = node.textContent;
-            const fragment = document.createDocumentFragment();
-            
-            // Split by words first
-            const words = text.split(/(\s+)/);
-            words.forEach(word => {
-              if (word.match(/^\s+$/)) {
-                // Preserve whitespace
-                fragment.appendChild(document.createTextNode(word));
-              } else if (word.length > 0) {
-                const wordSpan = document.createElement('span');
-                wordSpan.className = 'word';
-                
-                // Wrap each letter
-                word.split('').forEach(char => {
-                  const letterSpan = document.createElement('span');
-                  letterSpan.className = 'letter';
-                  letterSpan.textContent = char;
-                  letterSpan.style.transitionDelay = `${letterIndex * 0.04}s`;
-                  wordSpan.appendChild(letterSpan);
-                  letterIndex++;
-                });
-                
-                fragment.appendChild(wordSpan);
-              }
-            });
-            
-            node.replaceWith(fragment);
-          } else if (node.nodeType === Node.ELEMENT_NODE) {
-            // For elements like <span class="year-italic">, process their content
-            const innerText = node.textContent;
-            node.innerHTML = '';
-            
-            const wordSpan = document.createElement('span');
-            wordSpan.className = 'word';
-            
-            innerText.split('').forEach(char => {
-              const letterSpan = document.createElement('span');
-              letterSpan.className = 'letter';
-              letterSpan.textContent = char;
-              letterSpan.style.transitionDelay = `${letterIndex * 0.04}s`;
-              wordSpan.appendChild(letterSpan);
-              letterIndex++;
-            });
-            
-            node.appendChild(wordSpan);
-          }
-        });
-      }
-      
-      wrapLetters(titleMain);
-      
-      // Trigger animation after a brief delay
-      setTimeout(() => {
-        titleMain.classList.add('animate');
-        // Also animate the title-content for subtitles
-        const titleContent = document.querySelector('.title-content');
-        if (titleContent) {
-          titleContent.classList.add('animate');
-        }
-        // Also animate the section-title for scroll-hint
-        const sectionTitle = document.querySelector('.section-title');
-        if (sectionTitle) {
-          sectionTitle.classList.add('animate');
-        }
-      }, 200);
-    }
-    
-    // Scroll to bottom on load (start at title)
-    function scrollToBottom() {
-      const maxScroll = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight
-      );
-      window.scrollTo(0, maxScroll);
-    }
-    
-    // Immediate scroll
-    scrollToBottom();
-    
-    // Also on load event with delays for safety
-    window.addEventListener('load', () => {
-      scrollToBottom();
-      setTimeout(() => {
-        scrollToBottom();
-        setTimeout(animateTitleLetters, 100);
-      }, 100);
-      // Extra fallback for slow connections
-      setTimeout(scrollToBottom, 500);
-    });
-
-    // TOC navigation
+    const paperStack = document.getElementById('paper-stack');
+    const papers = Array.from(document.querySelectorAll('.paper'));
     const tocItems = document.querySelectorAll('.toc-item');
-    const sections = document.querySelectorAll('.section:not(.section-title)');
     
-    // Click navigation
-    tocItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const sectionId = item.dataset.section;
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
+    let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let activePaper = null;
+
+    // Section start indices
+    const sectionStarts = [0, 1, 3, 6, 8, 11, 13, 15];
+    
+    // Update TOC highlight based on which section the current index is in
+    function updateTOC(index) {
+      let activeSection = 0;
+      for (let i = sectionStarts.length - 1; i >= 0; i--) {
+        if (index >= sectionStarts[i]) {
+          activeSection = i;
+          break;
         }
+      }
+      tocItems.forEach((item, i) => {
+        item.classList.toggle('active', i === activeSection);
       });
+    }
+
+    // Get the current top paper
+    function getTopPaper() {
+      return papers[currentIndex];
+    }
+
+    // Swipe paper - just hide it (disappear)
+    function swipePaper() {
+      if (currentIndex >= papers.length - 1) return; // Don't swipe the last paper (2026)
+      
+      const paper = getTopPaper();
+      if (!paper) return;
+
+      // Just hide the paper (make it disappear)
+      paper.classList.add('hidden');
+      
+      currentIndex++;
+      updateTOC(currentIndex);
+    }
+
+    // Bring paper back
+    function bringBackPaper() {
+      if (currentIndex <= 0) return;
+      
+      currentIndex--;
+
+      // Show the paper again
+      const paper = papers[currentIndex];
+      paper.classList.remove('hidden');
+      paper.style.transform = '';
+      
+      updateTOC(currentIndex);
+    }
+
+    // Mouse/Touch handlers
+    function handleStart(e) {
+      // Don't allow dragging the final 2026 paper
+      if (currentIndex >= papers.length - 1) return;
+      
+      const paper = getTopPaper();
+      if (!paper || paper.classList.contains('paper-final')) return;
+
+      isDragging = true;
+      activePaper = paper;
+      startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+      currentX = startX;
+      
+      paper.style.transition = 'none';
+      paper.style.cursor = 'grabbing';
+    }
+
+    function handleMove(e) {
+      if (!isDragging || !activePaper) return;
+      
+      currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+      const deltaX = currentX - startX;
+      
+      // Allow dragging left (add rotation effect)
+      const rotation = deltaX * 0.03;
+      activePaper.style.transform = `translateX(calc(-50% + ${deltaX}px)) rotate(${rotation}deg)`;
+    }
+
+    function handleEnd() {
+      if (!isDragging || !activePaper) return;
+      
+      isDragging = false;
+      activePaper.style.transition = '';
+      activePaper.style.cursor = '';
+      
+      const deltaX = currentX - startX;
+      
+      // If dragged far enough left, swipe it
+      if (deltaX < -100) {
+        swipePaper();
+      } else if (deltaX > 100) {
+        bringBackPaper();
+      } else {
+        // Reset position to centered
+        const idx = activePaper.dataset.index;
+        const rotations = [1, -1.2, 0.8, 3, -0.6, 1.4, -0.9, 0.5, -1.1, 0.7, -0.4, 1.3, -0.8, 1.5, -1, 0.3];
+        activePaper.style.transform = `translateX(-50%) rotate(${rotations[idx]}deg)`;
+      }
+      
+      activePaper = null;
+    }
+
+    // Event listeners for the stack
+    paperStack.addEventListener('mousedown', handleStart);
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleEnd);
+
+    paperStack.addEventListener('touchstart', handleStart, { passive: true });
+    document.addEventListener('touchmove', handleMove, { passive: true });
+    document.addEventListener('touchend', handleEnd);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        swipePaper();
+      } else if (e.key === 'ArrowRight') {
+        bringBackPaper();
+      }
     });
 
-    // Scroll detection - update active TOC item
-    function updateActiveSection() {
-      const windowHeight = window.innerHeight;
-      let currentSection = null;
-      
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
+    // TOC click navigation
+    tocItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const targetIndex = parseInt(item.dataset.index);
         
-        // Check if this section is in view
-        if (rect.top < windowHeight * 0.6 && rect.bottom > windowHeight * 0.4) {
-          currentSection = section;
-        }
-      });
-      
-      if (currentSection) {
-        const sectionId = currentSection.id;
-        tocItems.forEach(item => {
-          if (item.dataset.section === sectionId) {
-            if (!item.classList.contains('active')) {
-              tocItems.forEach(i => i.classList.remove('active'));
-              item.classList.add('active');
-            }
+        // Reset all papers
+        papers.forEach((paper, i) => {
+          if (i < targetIndex) {
+            paper.classList.add('hidden');
+          } else {
+            paper.classList.remove('hidden');
+            paper.style.transform = '';
           }
         });
-      } else {
-        // If no section is active (at title), remove all active
-        const titleSection = document.getElementById('title');
-        const titleRect = titleSection.getBoundingClientRect();
-        if (titleRect.top < windowHeight * 0.6 && titleRect.bottom > windowHeight * 0.4) {
-          tocItems.forEach(i => i.classList.remove('active'));
-        }
-      }
-    }
-    
-    window.addEventListener('scroll', updateActiveSection);
-    setTimeout(updateActiveSection, 200);
-
-    // Show TOC when title section is in view (fade in on page load)
-    const toc = document.querySelector('.toc');
-    const titleSection = document.getElementById('title');
-    
-    function updateTocVisibility() {
-      if (titleSection) {
-        const titleRect = titleSection.getBoundingClientRect();
-        // Show TOC when title section is in view
-        if (titleRect.top < window.innerHeight && titleRect.bottom > 0) {
-          toc.classList.add('visible');
-        }
-      }
-    }
-    
-    // Fade in TOC after title animation completes (1.5s delay)
-    setTimeout(() => {
-      toc.classList.add('visible');
-    }, 1500);
-
-    // Zoom modal functionality
-    const zoomModal = document.getElementById('zoom-modal');
-    const zoomImage = document.getElementById('zoom-image');
-    const zoomClose = document.getElementById('zoom-close');
-    const zoomables = document.querySelectorAll('.zoomable');
-
-    zoomables.forEach(img => {
-      img.addEventListener('click', (e) => {
-        e.stopPropagation();
-        zoomImage.src = img.src;
-        zoomImage.alt = img.alt;
-        zoomModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        
+        currentIndex = targetIndex;
+        updateTOC(currentIndex);
       });
     });
 
-    zoomClose.addEventListener('click', () => {
-      zoomModal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-
-    zoomModal.addEventListener('click', (e) => {
-      if (e.target === zoomModal) {
-        zoomModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && zoomModal.classList.contains('active')) {
-        zoomModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-
-    // Fade-in animation on scroll
-    const fadeElements = document.querySelectorAll('.paper, .sketch-month, .symbol-2026');
-    
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.2,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    fadeElements.forEach(el => fadeObserver.observe(el));
+    // Initialize
+    updateTOC(0);
   </script>
 </body>
 </html>
+
