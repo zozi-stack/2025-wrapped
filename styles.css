@@ -466,7 +466,8 @@ img {
 /* Birthday Polaroid */
 .paper-polaroid {
   width: 160px;
-  position: relative;
+  position: center;
+  bottom: 50%;
   z-index: 1;
 }
 
@@ -561,6 +562,25 @@ img {
   right: 80px;
   bottom: 15%;
   transform: rotate(8deg);
+}
+
+/* Piano Texture - faded sheet music background */
+.piano-texture-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.piano-texture {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-11.41deg);
+  width: 250vw;
+  opacity: 0.03;
+  mix-blend-mode: multiply;
 }
 
 /* Piano Section - Overlapping sheet music */
